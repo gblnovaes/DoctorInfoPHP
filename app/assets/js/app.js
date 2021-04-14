@@ -20,7 +20,7 @@ var  datatable = function(){
                       "render": function(data, type, row){
                             //se quero pegar o id so usar row["id"]
 
-                            return '<a class="btn btn-warning" href="#'+ row["id"] +'">Editar</a>';
+                            return '<a class="btn btn-warning" href="#'+ row["id"] +'">Visualizar</a>';
                       }
                     }
                     
