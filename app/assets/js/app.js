@@ -1,14 +1,14 @@
-
-
-var  datatable = function(){
-    $(document).ready(function(){
-            $('#pacientes').DataTable({
+var datatable = function() {
+    $(document).ready(function() {
+        $('#pacientes').DataTable({
                 "processing": true,
-                'ajax': 'http://localhost/data/data.json',
+                'ajax': 'http://localhost:8000/data/data.json',
                 'language': {
-                    'url' : '//cdn.datatables.net/plug-ins/9dcbecd42ad/i18n/Portuguese.json'
+                    'url': '//cdn.datatables.net/plug-ins/9dcbecd42ad/i18n/Portuguese.json'
                 },
-                "order": [[0,"desc"]],
+                "order": [
+                    [0, "desc"]
+                ],
                 "columns": [
                     { "data": "id" },
                     { "data": "nome" },
@@ -16,28 +16,27 @@ var  datatable = function(){
                     { "data": "nascimento" },
                     { "data": "sexo" },
                     { "data": "departamento" },
-                    { "data": null,
-                      "render": function(data, type, row){
+                    {
+                        "data": null,
+                        "render": function(data, type, row) {
                             //se quero pegar o id so usar row["id"]
 
-                            return '<a class="btn btn-warning" href="#'+ row["id"] +'">Visualizar</a>';
-                      }
+                            return '<a class="btn btn-warning" href="#' + row["id"] + '">Visualizar</a>';
+                        }
                     }
-                    
+
                 ],
 
-                "columnsDef":[
-                    {
+                "columnsDef": [{
                     "targets": -1,
                     "data": null,
                     "visible": true,
                     "searchable": false,
                     "orderable": false
-                    }
-                ]
+                }]
             }
-            
-            
-            );
+
+
+        );
     });
 }
